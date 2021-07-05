@@ -1,18 +1,20 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-// import { View, Text, Button, StyleSheet, TouchableOpacity } from 'react-native';
 //  @react-nacigation/drawer
 import { createDrawerNavigator, DrawerItem } from '@react-navigation/drawer';
 import { NavigationContainer } from '@react-navigation/native';
-
+// Pages
 import Home from './src/screens/Home'
-import Produto from './src/screens/Produto';
+import ContentBlocks from './src/screens/ContentBlocks'
+import DefaultCards from './src/screens/DefaultCards'
+import PrincingTables from './src/screens/PrincigTables'
+import Forms from './src/screens/Forms'
+// Components
 import Header from './src/components/Header';
 
 const Drawer = createDrawerNavigator();
 
-
-function firstPage({ navigation }) {
+function HomePage({ navigation }) {
   return (
     <>
       <StatusBar hidden />
@@ -21,12 +23,39 @@ function firstPage({ navigation }) {
     </>
   );
 }
-function secondPage({ navigation }) {
+function ContentBlocksPage({ navigation }) {
   return (
     <>
       <StatusBar hidden />
       <Header drawer={() => navigation.openDrawer()} />
-      <Produto />
+      <ContentBlocks/>
+    </>
+  );
+}
+function DefaultCardsPage({ navigation }) {
+  return (
+    <>
+      <StatusBar hidden />
+      <Header drawer={() => navigation.openDrawer()} />
+      <DefaultCards/>
+    </>
+  );
+}
+function PrincingTablesPage({ navigation }) {
+  return (
+    <>
+      <StatusBar hidden />
+      <Header drawer={() => navigation.openDrawer()} />
+      <PrincingTables/>
+    </>
+  );
+}
+function FormsPage({ navigation }) {
+  return (
+    <>
+      <StatusBar hidden />
+      <Header drawer={() => navigation.openDrawer()} />
+      <Forms/>
     </>
   );
 }
@@ -40,11 +69,11 @@ export default function DrawerScreen({ Navigation }) {
           backgroundColor: '#eee',
           width: 250,
         }}>
-          <Drawer.Screen name='Dashboard' component={firstPage} />
-          <Drawer.Screen name='Default cards' component={secondPage} />
-          <Drawer.Screen name='Princig tables' component={secondPage} />
-          <Drawer.Screen name='Content blocks' component={secondPage} />
-          <Drawer.Screen name='Forms' component={secondPage} />
+          <Drawer.Screen name='Dashboard' component={HomePage}/>
+          <Drawer.Screen name='Default cards' component={DefaultCardsPage}/>
+          <Drawer.Screen name='Princig tables' component={PrincingTablesPage}/>
+          <Drawer.Screen name='Content blocks' component={ContentBlocksPage} />
+          <Drawer.Screen name='Forms' component={FormsPage} />
         </Drawer.Navigator>
       </NavigationContainer>
     </>
