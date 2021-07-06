@@ -1,7 +1,7 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 //  @react-nacigation/drawer
-import { createDrawerNavigator, DrawerItem } from '@react-navigation/drawer';
+import { createDrawerNavigator } from '@react-navigation/drawer';
 import { NavigationContainer } from '@react-navigation/native';
 // Pages
 import Home from './src/screens/Home'
